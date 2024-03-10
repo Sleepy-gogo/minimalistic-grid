@@ -1,0 +1,16 @@
+---
+import BookmarkItem from '@/components/BookmarkItem.astro';
+import type { Bookmark } from '@/components/BookmarkItem.astro';
+
+interface Props {
+  bookmarks: Bookmark[];
+}
+
+const { bookmarks } = Astro.props;
+---
+
+<div
+  class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] md:grid-cols-[repeat(3,minmax(200px,1fr))] gap-4 w-full max-w-screen-md"
+>
+  {bookmarks.map((bookmark) => <BookmarkItem bookmark={bookmark} />)}
+</div>

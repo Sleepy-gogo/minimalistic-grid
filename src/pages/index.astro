@@ -2,25 +2,32 @@
 import Layout from '@/layouts/Layout.astro';
 import FormatedDate from '@/components/FormatedDate.tsx';
 import User from '@/components/User.astro';
+import BookmarkGrid from '@/components/BookmarkGrid.astro';
+
+import data from '@/data/page.js';
 
 const date = new Date();
-
-const user = {
-  name: 'Axel',
-  username: 'SleepyGogo',
-  email: 'axelcastano@proton.me'
-};
+const { user, bookmarks } = data;
 ---
 
 <Layout title="New page">
-  <main class="flex h-full flex-col items-center justify-center gap-2">
+  <main class="flex flex-col items-center gap-2 sm:justify-center min-h-full">
     <div
-      class="flex gap-y-2 gap-x-5 items-center justify-center flex-col md:flex-row"
+      class="flex gap-y-2 gap-x-5 items-center justify-center flex-col sm:flex-row"
     >
       <User user={user} />
-      <div class="hidden md:block h-full w-0.5 bg-white/20"></div>
+      <div class="hidden sm:block h-28 w-0.5 bg-white/60"></div>
       <FormatedDate client:load date={date} />
     </div>
-    <section></section>
+    <section
+      class="mt-16 md:mt-10 flex flex-col gap-8 md:gap-4 items-center w-full"
+    >
+      <h2 class="text-xl tracking-tight font-black text-white">Links</h2>
+      <BookmarkGrid bookmarks={bookmarks} />
+    </section>
   </main>
 </Layout>
+<script>
+  import { createIcons, icons } from 'lucide';
+  createIcons({ icons });
+</script>

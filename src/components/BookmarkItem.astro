@@ -1,0 +1,23 @@
+---
+export interface Bookmark {
+  name: string;
+  icon: string;
+  url: string;
+}
+
+interface Props {
+  bookmark: Bookmark;
+}
+
+const { bookmark } = Astro.props;
+const { name, icon, url } = bookmark;
+---
+
+<a
+  href={url}
+  class="aspect-video w-full bg-white/5 outline outline-1 outline-white/30 shadow-[inset_0_0_20px_rgba(255,255,255,0.05)] backdrop-blur-sm rounded-xl grid place-content-center transition ease-in-out hover:scale-105 hover:outline-white/50 group"
+>
+  <i
+    data-lucide={icon}
+    class="size-10 text-white transition ease-in-out group-hover:scale-110"></i>
+</a>

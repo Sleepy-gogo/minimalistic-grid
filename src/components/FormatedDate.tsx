@@ -19,7 +19,7 @@ function FormatedDate({ date }: FormatedDateProps) {
   const minutes = currentDate.getMinutes().toString().padStart(2, '0');
 
   return (
-    <div className="flex flex-col justify-center items-center md:items-start">
+    <div className="flex flex-col justify-center items-center sm:items-start">
       <h2 className="text-6xl sm:text-7xl md:text-8xl tracking-tight font-black text-white text-center">
         {hours}:{minutes}
       </h2>
