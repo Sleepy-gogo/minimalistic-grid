@@ -6,6 +6,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["node"],
+    "esModuleInterop": true
   }
 }

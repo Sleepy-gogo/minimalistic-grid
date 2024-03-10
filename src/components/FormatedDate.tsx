@@ -19,11 +19,11 @@ function FormatedDate({ date }: FormatedDateProps) {
   const minutes = currentDate.getMinutes().toString().padStart(2, '0');
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <h1 className="text-6xl sm:text-7xl md:text-8xl tracking-tight font-black text-white text-center">
+    <div className="flex flex-col justify-center items-center md:items-start">
+      <h2 className="text-6xl sm:text-7xl md:text-8xl tracking-tight font-black text-white text-center">
         {hours}:{minutes}
-      </h1>
-      <p className="text-base sm:text-lg md:text-xl text-white tracking-widest">
+      </h2>
+      <p className="text-base sm:text-lg md:text-xl text-white tracking-widest opacity-60">
         {currentDate.toLocaleDateString('en-US', {
           weekday: 'long',
           day: 'numeric',

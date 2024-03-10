@@ -1,12 +1,26 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import FormatedDate from '@/components/FormatedDate.tsx';
+import User from '@/components/User.astro';
 
 const date = new Date();
+
+const user = {
+  name: 'Axel',
+  username: 'SleepyGogo',
+  email: 'axelcastano@proton.me'
+};
 ---
 
 <Layout title="New page">
   <main class="flex h-full flex-col items-center justify-center gap-2">
-    <FormatedDate client:load date={date} />
+    <div
+      class="flex gap-y-2 gap-x-5 items-center justify-center flex-col md:flex-row"
+    >
+      <User user={user} />
+      <div class="hidden md:block h-full w-0.5 bg-white/20"></div>
+      <FormatedDate client:load date={date} />
+    </div>
+    <section></section>
   </main>
 </Layout>

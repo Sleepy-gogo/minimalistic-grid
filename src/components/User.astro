@@ -1,0 +1,39 @@
+---
+import * as crypto from 'crypto';
+interface Props {
+  user: {
+    name: string;
+    username: string;
+    email: string;
+  };
+}
+
+const { user } = Astro.props;
+const { name, username, email } = user;
+
+const getInitials = (name: string) => {
+  return name.substring(0, 2).toUpperCase();
+};
+
+const formatedEmail = email.trim().toLowerCase();
+const hash = crypto.createHash('md5').update(formatedEmail).digest('hex');
+---
+
+<div class="flex gap-x-4 items-center justify-center">
+  <picture
+    class="size-24 md:size-32 relative grid place-content-center rounded-xl bg-slate-800"
+  >
+    <p class="text-white text-2xl font-black">
+      {getInitials(name)}
+    </p>
+    <img
+      src={`https://gravatar.com/avatar/${hash}`}
+      alt="User photo"
+      class="text-transparent h-full w-full object-cover rounded-xl absolute inset-0"
+    />
+  </picture>
+  <div class="flex flex-col justify-center text-white">
+    <h1 class="text-2xl font-black tracking-tight">{name}</h1>
+    <p class="text-base opacity-80 tracking-widest">@{username}</p>
+  </div>
+</div>
