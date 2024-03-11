@@ -1,54 +1,66 @@
-# Astro Starter Kit: Basics
+<h1 align="center">Minimalistic Grid <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f327_fe0f/512.webp" width="32"/> <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f343/512.webp" width="32"/> </h1>
 
-```sh
-npm create astro@latest -- --template basics
+<p align="center">This project is inspired by <a href="https://github.com/migueravila/Bento">Migueravilla's Bento</a> new page. It has been built with astro for easy customization with TailwindCSS and Astro.<br/>Feel free to <b>fork</b> or <b>contribute</b>!</p>
+
+## Requirements
+
+- Node.js 18+.
+- Vercel account for hosting.
+
+<p align="center">If you just wanna change the name, and bookmarks, you don't need anything. <a href="#customizing">Check here</a> for instructions.</p>
+
+## Installation and use
+
+1. Fork the repository to customize it to your liking
+
+If you wanna change the the layout, or add more features like weather, or anything of your liking, you'll need to clone it, and install the dependencies.
+
+```bash
+git clone <your-repo-url>
+cd <the-repo-name>
+npm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Then you can start the development server and start adding features. Refer to the [Astro Docs](https://docs.astro.build/en/getting-started/) if you're not familiar with it.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm run dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+This will let you preview your changes in the browser as you do them.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+2. Start customizing your page!
 
-Any static assets, like images, can be placed in the `public/` directory.
+<p id="customizing"></p>
 
-## 🧞 Commands
+When you're doing adding or editing features, you can start modifying the `src/data/page.js` file, where you'll find all the parameters that allow you to customize the content of the page.
 
-All commands are run from the root of the project, from a terminal:
+### Customizing the user
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Under the `user` attribute in the file, you'll be able to set the name that shows up in bold, and the username that shows right below it.
 
-## 👀 Want to learn more?
+To set the image, I've chosen to use the Gravatar API. So if you already have a Gravatar account setted up, you can just change the `email` property and it'll show your image. If you do not have an account, you can create one by going to [Gravatar](https://gravatar.com/).
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+If it's the first time you're using Gravatar, the image may not show up immediately and it could even take a couple of days.
+
+If you do not want to create an account, you can also go to `src/components/User.astro` and set the url of your image directly in the `src` attribute of the `img` tag.
+
+### Customizing the links
+
+Under the `bookmarks` attribute in the file, you'll find an array of objects that contain a `name`, `icon` and `url` attributes. You can modify the array to add as many bookmarks as you want.
+
+For choosing an icon name, please refer to [Lucide Icons](https://lucide.dev/icons).
+
+## Customizing the background
+
+You can change the background of the page by simply swaping the `public/background.svg` by another file by the same name. I've used [Haikei](https://haikei.app/) to generate mine.
+
+If your background isn't an svg, you can also go to the `src/layouts/Layout.astro` file and change the `background` so it picks up your image name. By the same method, and putting the url of a gif, you can also add animated backgrounds! Further customizations may be needed to make it look right.
+
+## Customizing the colors
+
+For now, if you wish to change the text color, you'll need to go individually to each component and change the classes there.
+
+# Contributing
+
+Your contributions will be well received! Please feel free to fork and start making contributions.
