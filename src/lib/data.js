@@ -4,6 +4,11 @@ export default {
     username: 'SleepyGogo',
     email: 'axelcastano@proton.me'
   },
+  clock: {
+    timezone: 'America/Argentina/Cordoba',
+    clockFormat: 'es-AR', // Change to en-US for 12hour clock formatting
+    dateFormat: 'en-US'
+  },
   bookmarks: [
     {
       name: 'Github',

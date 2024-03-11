@@ -4,9 +4,8 @@ import FormatedDate from '@/components/FormatedDate.tsx';
 import User from '@/components/User.astro';
 import BookmarkGrid from '@/components/BookmarkGrid.astro';
 
-import data from '@/data/page.js';
+import data from '@/lib/data.js';
 
-const date = new Date();
 const { user, bookmarks } = data;
 ---
 
@@ -17,7 +16,7 @@ const { user, bookmarks } = data;
     >
       <User user={user} />
       <div class="hidden sm:block h-28 w-0.5 bg-white/60"></div>
-      <FormatedDate client:load date={date} />
+      <FormatedDate client:load />
     </div>
     <section
       class="mt-16 md:mt-10 flex flex-col gap-8 md:gap-4 items-center w-full"

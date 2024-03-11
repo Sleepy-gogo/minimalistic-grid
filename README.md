@@ -33,7 +33,7 @@ This will let you preview your changes in the browser as you do them.
 
 <p id="customizing"></p>
 
-When you're doing adding or editing features, you can start modifying the `src/data/page.js` file, where you'll find all the parameters that allow you to customize the content of the page.
+When you're doing adding or editing features, you can start modifying the `src/lib/data.js` file, where you'll find all the parameters that allow you to customize the content of the page.
 
 ### Customizing the user
 
@@ -45,21 +45,31 @@ If it's the first time you're using Gravatar, the image may not show up immediat
 
 If you do not want to create an account, you can also go to `src/components/User.astro` and set the url of your image directly in the `src` attribute of the `img` tag.
 
+## Customizing the clock
+
+Under the `clock` attribute in the file, you can change the timezone and locale for the clock and date that shows right below it. For valid timezones, please refer to [this page](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+
 ### Customizing the links
 
 Under the `bookmarks` attribute in the file, you'll find an array of objects that contain a `name`, `icon` and `url` attributes. You can modify the array to add as many bookmarks as you want.
 
 For choosing an icon name, please refer to [Lucide Icons](https://lucide.dev/icons).
 
-## Customizing the background
+### Customizing the background
 
-You can change the background of the page by simply swaping the `public/background.svg` by another file by the same name. I've used [Haikei](https://haikei.app/) to generate mine.
+You can change the background of the page by simply swaping the `src/assets/background.svg` by another file by the same name. I've used [Haikei](https://haikei.app/) to generate mine.
 
 If your background isn't an svg, you can also go to the `src/layouts/Layout.astro` file and change the `background` so it picks up your image name. By the same method, and putting the url of a gif, you can also add animated backgrounds! Further customizations may be needed to make it look right.
 
-## Customizing the colors
+### Customizing the colors
 
 For now, if you wish to change the text color, you'll need to go individually to each component and change the classes there.
+
+3. Deploying and setting it up on firefox.
+
+Once you're done, you can simply deploy it to Vercel, using your github repo.
+
+To set it up in your Firefox, please check out [here](https://github.com/migueravila/Bento?tab=readme-ov-file#-as-new-tab).
 
 # Contributing
 
