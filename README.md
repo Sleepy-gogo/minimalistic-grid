@@ -1,6 +1,6 @@
 <h1 align="center">Minimalistic Grid <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f327_fe0f/512.webp" width="32"/> <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f343/512.webp" width="32"/> </h1>
 
-<p align="center"><img src="https://github.com/Sleepy-gogo/minimalistic-grid/assets/62667318/f72701b8-a554-40da-80ec-b9177a7fbfd4"/><br/>This project is inspired by <a href="https://github.com/migueravila/Bento">Migueravilla's Bento</a> new page. It has been built with astro for easy customization with TailwindCSS and Astro. You can see it live <a href="https://minimalistic-grid.vercel.app">here</a>.<br/>Feel free to <b>fork</b> or <b>contribute</b>!</p>
+<p align="center"><img src="https://github.com/Sleepy-gogo/minimalistic-grid/assets/62667318/f72701b8-a554-40da-80ec-b9177a7fbfd4"/><br/>This project is inspired by <a href="https://github.com/migueravila/Bento">Migueravilla's Bento</a> new page. It has been built with Astro for easy extending and TailwindCSS. You can see it live <a href="https://minimalistic-grid.vercel.app">here</a>.<br/>Feel free to <b>fork</b> or <b>contribute</b>!</p>
 
 ## 📌 Requirements
 
